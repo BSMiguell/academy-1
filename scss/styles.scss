@@ -1,0 +1,144 @@
+// -- Font --
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500&display=swap");
+
+// -- Reset --
+* {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none !important;
+  transition: all 0.2s linear;
+}
+
+// -- Variables color --
+$orange: #ff5421;
+$white: #fff;
+$black: #000;
+$light-color: #ccc;
+$bg-color: #1d0e15;
+$border: 0.1rem solid rgba(255, 255, 255, 0.2);
+
+// -- Mixin --
+@mixin grid($val) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+  gap: 2rem;
+}
+@mixin title-text($titleText) {
+  font-size: $titleText;
+  text-transform: capitalize;
+  color: $white;
+}
+@mixin graph-text($graphText) {
+  font-size: $graphText;
+  line-height: 2;
+  color: $light-color;
+}
+
+// -- Styles Standard --
+html {
+  overflow-x: hidden;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 8rem;
+
+  &::-webkit-scrollbar {
+    width: 1rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $bg-color;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $orange;
+  }
+}
+body {
+  background: $bg-color;
+}
+section {
+  padding: 3rem 1rem;
+}
+.link-btn {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  background: $orange;
+  color: $white;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  font-size: 1.8rem;
+  text-transform: capitalize;
+
+  &:hover {
+    background: $white;
+    color: $orange;
+  }
+}
+.heading {
+  text-align: center;
+  margin-bottom: 3rem;
+
+  span {
+    font-size: 2.5rem;
+    color: $orange;
+  }
+
+  h3 {
+    @include title-text(3.5rem);
+  }
+}
+
+// ===== HEADER =====
+.header {
+  z-index: 1000;
+  padding: 3rem 1rem;
+
+  &.active {
+    background: $white;
+    padding: 2rem 0;
+
+    .logo {
+      color: $black;
+    }
+
+    .nav a {
+      color: $black;
+    }
+
+    #menu-btn {
+      color: $black;
+    }
+  }
+
+  .logo {
+    font-size: 2.5rem;
+    color: $white;
+    font-weight: bolder;
+
+    span {
+      color: $orange;
+    }
+  }
+
+  .nav a {
+    font-size: 2rem;
+    margin-left: 2rem;
+    color: $white;
+
+    &:hover {
+      color: $orange;
+    }
+  }
+
+  #menu-btn {
+    display: none;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: $white;
+  }
+}
