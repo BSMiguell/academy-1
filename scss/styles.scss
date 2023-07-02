@@ -60,6 +60,9 @@ html {
 body {
   background: $bg-color;
 }
+.main {
+  overflow: hidden;
+}
 section {
   padding: 3rem 1rem;
 }
@@ -92,6 +95,7 @@ section {
     @include title-text(3.5rem);
   }
 }
+// === X === === X === === X ===
 
 // ===== HEADER =====
 .header {
@@ -142,3 +146,24 @@ section {
     color: $white;
   }
 }
+// === X === === X === === X ===
+
+// ===== HOME =====
+.home {
+  background: url(../img/home-bg.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding-top: 5rem;
+
+  span {
+    font-size: 2.5rem;
+    color: $orange;
+  }
+
+  h3 {
+    @include title-text(5rem);
+    padding-top: 1rem;
+  }
+}
+// === X === === X === === X ===
